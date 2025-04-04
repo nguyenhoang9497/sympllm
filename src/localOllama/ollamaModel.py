@@ -23,19 +23,18 @@ class OllamaModel:
             
         while True:
             value = self.getModelFromUser(self.client.list()['models'])
-            match value:
-                case "quit":
-                    if not isChangeModel:
-                        print("Exiting application...")
-                        exit(0)
-                    else:
-                        break
-                case _:
-                    if value in modelList:
-                        self.modelName = value
-                        break
-                    else:
-                        print("Invalid model name")
+            if(value == "quit"):
+                if not isChangeModel:
+                    print("Exiting application...")
+                    exit(0)
+                else:
+                    break
+            else: 
+                if value in modelList:
+                    self.modelName = value
+                    break
+                else:
+                    print("Invalid model name")
                         
         print(f"Selected model: {self.modelName}")
         self.model = ChatOllama(model=self.modelName, temperature=0)
