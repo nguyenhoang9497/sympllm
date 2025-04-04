@@ -12,5 +12,5 @@ __pycache__/api.cpython-313.pyc
 __pycache__/__init__.cpython-313.pyc
 __pycache__/config.cpython-313.pyc
 __pycache__/llm.cpython-313.pyc
-
-
+.venv/
+chroma/
